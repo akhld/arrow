@@ -60,7 +60,7 @@ Arrow provides a tree-based model for memory allocation. The RootAllocator is cr
 Arrow provides two different ways to reserve memory:
 
   - BufferAllocator accounting reservations: 
-      When a new allocator (other than the `RootAllocator`) is initialized, it can set aside memory that it will keep locally for its lifetime. This is memory that will never be released back to its parent allocator until the allocator is closed.
+      When a new allocator (other than the `RootAllocator`) is initialized, it can set aside memory that it will keep locally for its lifetime. This memory will never be released back to its parent allocator until the allocator is closed.
   - `AllocationReservation` via BufferAllocator.newReservation(): Allows a short-term preallocation strategy so that a particular subsystem can ensure future memory is available to support a particular request.
   
 ## Memory Ownership, Reference Counts and Sharing
